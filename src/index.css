@@ -1,0 +1,132 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 248 250 252;
+    --foreground: 15 23 42;
+
+    --card: 255 255 255;
+    --card-foreground: 15 23 42;
+
+    --popover: 255 255 255;
+    --popover-foreground: 15 23 42;
+
+    --primary: 14 165 233;
+    --primary-foreground: 255 255 255;
+
+    --secondary: 241 245 249;
+    --secondary-foreground: 51 65 85;
+
+    --muted: 248 250 252;
+    --muted-foreground: 100 116 139;
+
+    --accent: 240 249 255;
+    --accent-foreground: 14 165 233;
+
+    --destructive: 239 68 68;
+    --destructive-foreground: 255 255 255;
+
+    --border: 226 232 240;
+    --input: 226 232 240;
+    --ring: 14 165 233;
+
+    --radius: 0.75rem;
+  }
+
+  .dark {
+    --background: 15 23 42;
+    --foreground: 248 250 252;
+
+    --card: 30 41 59;
+    --card-foreground: 248 250 252;
+
+    --popover: 30 41 59;
+    --popover-foreground: 248 250 252;
+
+    --primary: 56 189 248;
+    --primary-foreground: 15 23 42;
+
+    --secondary: 51 65 85;
+    --secondary-foreground: 226 232 240;
+
+    --muted: 51 65 85;
+    --muted-foreground: 148 163 184;
+
+    --accent: 30 58 138;
+    --accent-foreground: 226 232 240;
+
+    --destructive: 220 38 38;
+    --destructive-foreground: 248 250 252;
+
+    --border: 51 65 85;
+    --input: 51 65 85;
+    --ring: 56 189 248;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 text-foreground min-h-screen;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  }
+
+  .dark body {
+    @apply bg-gradient-to-br from-slate-900 via-slate-800 to-indigo-900;
+  }
+}
+
+@layer components {
+  .focus-button {
+    @apply bg-gradient-to-r from-focus-500 to-focus-600 hover:from-focus-600 hover:to-focus-700 
+           text-white font-semibold py-4 px-8 rounded-2xl shadow-lg hover:shadow-xl 
+           transform hover:scale-105 transition-all duration-200 active:scale-95;
+  }
+
+  .timer-display {
+    @apply text-6xl font-bold bg-gradient-to-r from-focus-600 to-indigo-600 bg-clip-text text-transparent;
+  }
+
+  .stats-card {
+    @apply bg-white/80 backdrop-blur-sm border border-white/20 rounded-xl p-6 shadow-lg 
+           hover:shadow-xl transition-all duration-300;
+  }
+
+  .task-input {
+    @apply w-full px-4 py-3 bg-white/90 backdrop-blur-sm border border-slate-200 
+           rounded-xl focus:ring-2 focus:ring-focus-500 focus:border-transparent 
+           placeholder-slate-400 transition-all duration-200;
+  }
+
+  .blocked-site-overlay {
+    @apply fixed inset-0 bg-gradient-to-br from-slate-100 to-blue-100 flex items-center justify-center z-50;
+  }
+}
+
+/* Animações personalizadas */
+@keyframes breathe {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+.breathe {
+  animation: breathe 4s ease-in-out infinite;
+}
+
+/* Scrollbar personalizada */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-slate-100 rounded-lg;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-slate-300 rounded-lg hover:bg-slate-400;
+}
