@@ -107,9 +107,7 @@ const MainPopup: React.FC = () => {
         <div className="flex-1 flex flex-col justify-center items-center">
           <div className="mb-8 text-center">
             <Target className="w-16 h-16 text-focus-500 mx-auto mb-4 animate-pulse-slow" />
-            <h1 className="text-2xl font-bold text-slate-800 mb-2">
-              Foco Inicial
-            </h1>
+            <h1 className="text-2xl font-bold text-slate-800 mb-2">Startize</h1>
             <p className="text-slate-600 text-sm">
               Comece com apenas 5 minutos
             </p>
