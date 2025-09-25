@@ -69,7 +69,8 @@ const MainPopup: React.FC = () => {
   const handleStopSession = () => {
     console.log("⏹️ MainPopup: Parando sessão");
     dispatch({ type: "STOP_SESSION" });
-    toast.info("Sessão interrompida. Tudo bem, tente novamente! 🤗");
+    setTaskInput("");
+    toast.info("Sessão interrompida. Tudo bem, tente novamente!");
   };
 
   const getSessionTitle = () => {
@@ -95,7 +96,7 @@ const MainPopup: React.FC = () => {
       return "text-success-600";
     }
     if (state.timeRemaining < 60 && state.sessionType !== null) {
-      return "text-warning-600";
+      return "text-focus-600";
     }
     return "text-focus-600";
   };
